@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+import "OrderService/Models/order_state.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message ChangeStatePayload {
+  OrderState previous_state = 1;
+  OrderState new_state = 2;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "OrderService/Requests/create_order_request.proto";
+import "OrderService/Requests/add_order_item_request.proto";
+import "OrderService/Requests/change_state_request.proto";
+import "OrderService/Requests/remove_order_item_request.proto";
+import "OrderService/Requests/get_history_by_filter_request.proto";
+import "OrderService/Replies/add_order_item_reply.proto";
+import "OrderService/Replies/get_history_by_filter_reply.proto";
+import "OrderService/Replies/creater_order_reply.proto";
+
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+service OrderService {
+
+  rpc Create(CreateOrderRequest) returns (CreateOrderReply);
+
+  rpc AddOrderItem(AddOrderItemRequest) returns (AddOrderItemReply);
+
+  rpc RemoveOrderItem(RemoveOrderItemRequest) returns (google.protobuf.Empty);
+
+  rpc TransferToWork(ChangeStateRequest) returns (google.protobuf.Empty);
+
+  rpc CancelOrder(ChangeStateRequest) returns (google.protobuf.Empty);
+
+  rpc GetHistoryByFilter(GetHistoryByFilterRequest) returns (GetHistoryByFilterReply);
+
+}

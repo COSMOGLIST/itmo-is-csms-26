@@ -1,0 +1,30 @@
+﻿syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "OrderService/Models/order_history_item_kind.proto";
+import "OrderService/Models/Payloads/create_payload.proto";
+import "OrderService/Models/Payloads/change_state_payload.proto";
+import "OrderService/Models/Payloads/change_state_in_process_payload.proto";
+import "OrderService/Models/Payloads/item_add_payload.proto";
+import "OrderService/Models/Payloads/item_remove_payload.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message OrderHistory {
+  int64 id = 1;
+  int64 order_id = 2;
+  google.protobuf.Timestamp order_history_item_created_at = 3;
+  OrderHistoryItemKind order_history_item_kind = 4;
+  oneof oder_history_item_payload {
+    ChangeStatePayload change_state_payload = 5;
+    CreatePayload create_payload = 6;
+    ItemAddPayload item_add_payload = 7;
+    ItemRemovePayload item_remove_payload = 8;
+    ChangeStateInProcessPayload change_state_in_process_payload = 9;
+  }
+}
+
+
+
+    

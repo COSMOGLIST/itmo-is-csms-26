@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "ProductService/Models/money.proto";
+
+option csharp_namespace = "Library";
+
+package ProductService;
+
+message CreateProductRequest {
+  string product_name = 1;
+  Money money = 2;
+}

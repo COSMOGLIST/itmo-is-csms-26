@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+import "OrderService/Models/order_history.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message GetHistoryByFilterReply {
+  repeated OrderHistory order_histories = 1;
+}

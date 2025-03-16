@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message AddOrderItemReply {
+  google.protobuf.Int64Value order_item_id = 1;
+}

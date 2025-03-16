@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message CreateOrderReply {
+  int64 id = 1;
+}

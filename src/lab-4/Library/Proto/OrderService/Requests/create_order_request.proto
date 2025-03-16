@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message CreateOrderRequest {
+  string order_created_by = 1;
+  google.protobuf.Timestamp order_created_at = 2;
+}

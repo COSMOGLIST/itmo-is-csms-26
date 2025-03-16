@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message ChangeStateInProcessPayload {
+  string order_processing_event = 1;
+  bool is_successful = 2;
+}

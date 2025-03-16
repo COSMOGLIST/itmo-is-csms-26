@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Protobuf ProtoRoot="..\Library\Proto" Include="..\Library\Proto\**\*.proto" GrpcServices="Client"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Grpc.AspNetCore" />
+      <PackageReference Include="Grpc.Net.Client" />
+      <PackageReference Include="Grpc.Tools">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Swashbuckle.AspNetCore" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageVersion Update="Grpc.AspNetCore" Version="2.66.0" />
+    </ItemGroup>
+
+</Project>

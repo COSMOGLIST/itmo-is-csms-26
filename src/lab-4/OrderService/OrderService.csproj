@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Confluent.Kafka" />
+        <PackageReference Include="Grpc.AspNetCore" />
+        <PackageReference Include="Grpc.AspNetCore.Server.Reflection" />
+        <PackageReference Include="Grpc.Core" />
+        <PackageReference Include="Grpc.Reflection" />
+        <PackageReference Include="Grpc.Tools">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="System.Linq.Async" />
+        <PackageReference Include="Google.Protobuf" />
+        <ProjectReference Include="..\BasicImplementation\BasicImplementation.csproj" />
+        <ProjectReference Include="..\Kafka\Kafka.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf ProtoRoot="..\Library\Proto" Include="..\Library\Proto\**\*.proto" GrpcServices="Server"/>
+        <Protobuf Update="..\Library\Proto\ProductService\Models\money.proto">
+          <Link>ProductService\Models\money.proto</Link>
+        </Protobuf>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Protobuf ProtoRoot="Proto" Include="Proto\**\*.proto" GrpcServices="None"/>
+      <Protobuf Update="Proto\KafkaMessages\protos\order_creation.proto">
+        <Access>Public</Access>
+        <ProtoCompile>True</ProtoCompile>
+        <CompileOutputs>True</CompileOutputs>
+        <OutputDir>obj\Debug\net8.0\</OutputDir>
+        <Generator>MSBuild:Compile</Generator>
+      </Protobuf>
+      <Protobuf Update="Proto\KafkaMessages\protos\order_processing.proto">
+        <Access>Public</Access>
+        <ProtoCompile>True</ProtoCompile>
+        <CompileOutputs>True</CompileOutputs>
+        <OutputDir>obj\Debug\net8.0\</OutputDir>
+        <Generator>MSBuild:Compile</Generator>
+      </Protobuf>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" />
+      <PackageReference Include="Grpc.Tools">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+</Project>

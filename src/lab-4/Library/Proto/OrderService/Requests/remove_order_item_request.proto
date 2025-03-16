@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message RemoveOrderItemRequest {
+  int64 order_id = 1; 
+  int64 order_item_id = 2;
+}

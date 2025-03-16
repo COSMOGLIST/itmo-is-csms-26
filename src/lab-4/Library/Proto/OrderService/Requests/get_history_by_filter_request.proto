@@ -1,0 +1,14 @@
+﻿syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+import "OrderService/Models/order_history_item_kind.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message GetHistoryByFilterRequest {
+  int32 cursor = 1;
+  int32 page_size = 2;
+  google.protobuf.Int64Value order_id = 3;
+  optional OrderHistoryItemKind order_history_item_kind = 4;
+}

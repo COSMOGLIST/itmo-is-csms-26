@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Library";
+
+package OrderService;
+
+message ChangeStateRequest {
+  int64 id = 1;
+  google.protobuf.Timestamp order_changed_state_at = 2;
+}

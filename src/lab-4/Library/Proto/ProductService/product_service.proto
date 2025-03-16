@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+import "ProductService/Requests/create_product_request.proto";
+import "ProductService/Replies/create_product_reply.proto";
+
+option csharp_namespace = "Library";
+
+package ProductService;
+
+service ProductService {
+
+    rpc Create(CreateProductRequest) returns (CreateProductReply);
+
+}

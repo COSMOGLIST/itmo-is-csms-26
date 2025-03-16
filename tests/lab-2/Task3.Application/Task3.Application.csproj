@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\lab-2\Task1\Task1.csproj" />
+      <ProjectReference Include="..\..\..\src\lab-2\Task2\Task2.csproj" />
+      <ProjectReference Include="..\..\..\src\lab-2\Task3\Task3.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Configuration" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+      <PackageReference Include="NSubstitute" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+      <Content Include="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>

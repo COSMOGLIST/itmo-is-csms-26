@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Library";
+
+package ProductService;
+
+message CreateProductReply {
+  int64 id = 1;
+}
